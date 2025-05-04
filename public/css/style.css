@@ -1,0 +1,8 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4 url('/images/horstel.jpeg') no-repeat center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
