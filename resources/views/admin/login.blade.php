@@ -1,29 +1,38 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 <div class="login-container">
-    <div class="logo">
-        <h1>Horseplay Hotel</h1>
-    </div>
-    @if (session('error'))
-        <div class="error-message">
-            {{ session('error') }}
+    <div class="login-box">
+        <h2>Admin Login</h2>
+        
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    @endif
-    <form method="POST" action="{{ route('admin.login') }}">
-        @csrf
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required>
+        @endif
+
+        <form method="POST" action="{{ route('admin.login') }}">
+            @csrf
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <div class="back-link">
+            <a href="{{ route('home') }}">← Back to Website</a>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button type="submit" class="btn">Login</button>
-    </form>
-    <div class="back-link">
-        <a href="{{ route('home') }}">← Back to Website</a>
     </div>
 </div>
 @endsection

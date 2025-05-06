@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
+@section('title', 'Admin Dashboard - Horseplay Hotel')
+
 @section('content')
 <div class="admin-header">
     <h1>Reservation Management</h1>
-    <button type="button" class="btn btn-create" onclick="showCreateForm()">Create New Reservation</button>
 </div>
 
 <div class="admin-table-container">
@@ -12,7 +13,7 @@
             <tr>
                 <th>ID</th>
                 <th>Guest Name</th>
-                <th>Contact</th>
+                <th>Contact Number</th>
                 <th>Check In</th>
                 <th>Check Out</th>
                 <th>Room Type</th>
@@ -22,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($reservations as $reservation)
+            @forelse($reservations as $reservation)
                 <tr>
                     <td>{{ $reservation->id }}</td>
                     <td>{{ $reservation->name }}</td>
@@ -36,12 +37,17 @@
                         <form method="POST" action="{{ route('admin.reservations.delete', $reservation->id) }}" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this reservation?')">Delete</button>
+                            <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this reservation?')">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
                         </form>
-                        <button type="button" class="btn btn-edit" onclick="showEditForm({{ $reservation }})">Edit</button>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="9" class="text-center">No reservations found.</td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
 </div>

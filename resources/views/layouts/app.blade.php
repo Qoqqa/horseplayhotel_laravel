@@ -16,9 +16,10 @@
                 </a>
                 <div class="nav-links">
                     <a href="{{ route('home') }}">Home</a>
-                    <a href="{{ route('contacts') }}">Contacts</a>
-                    <a href="{{ route('profile') }}">Profile</a>
-                    <a href="{{ route('reservation') }}">Reservation</a>
+                    <a href="{{ route('profile') }}">Company Profile</a>
+                    <a href="{{ route('reservation') }}">Reservations</a>
+                    <a href="{{ route('contacts') }}">Contact Us</a>
+                    <a href="{{ route('admin.login') }}" class="btn btn-primary admin-link">Admin Portal</a>
                 </div>
             </div>
         </nav>

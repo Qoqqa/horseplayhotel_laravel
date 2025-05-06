@@ -22,22 +22,22 @@ class ReservationController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'number' => 'required|string|max:20',
+            'contact_number' => 'required|string|max:20',
             'from' => 'required|date',
             'to' => 'required|date|after:from',
-            'room' => 'required|string',
-            'capacity' => 'required|string',
-            'payment' => 'required|string',
+            'room_type' => 'required|string',
+            'room_capacity' => 'required|string',
+            'payment_type' => 'required|string',
         ]);
 
-        Reservation::create([
+        $reservation = Reservation::create([
             'name' => $request->name,
-            'contact_number' => $request->number,
+            'contact_number' => $request->contact_number,
             'reservation_from' => $request->from,
             'reservation_to' => $request->to,
-            'room_type' => $request->room,
-            'room_capacity' => $request->capacity,
-            'payment_type' => $request->payment,
+            'room_type' => $request->room_type,
+            'room_capacity' => $request->room_capacity,
+            'payment_type' => $request->payment_type,
         ]);
 
         return redirect()->route('reservation')->with('success', 'Reservation created successfully!');

@@ -2,7 +2,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f2f5;
+    background: #f0f2f5 url('/images/horstel.jpeg') no-repeat center fixed;
+    background-size: cover;
 }
 
 .admin-sidebar {
@@ -287,4 +288,4 @@ select {
 
 .btn-create:hover {
     background-color: #45a049;
-} 
+}

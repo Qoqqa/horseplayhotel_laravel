@@ -11,7 +11,11 @@ class Reservation extends Model
 
     protected $fillable = [
         'name',
-        'email',
-        'reservation_date',
+        'contact_number',
+        'reservation_from',
+        'reservation_to',
+        'room_type',
+        'room_capacity',
+        'payment_type'
     ];
 }

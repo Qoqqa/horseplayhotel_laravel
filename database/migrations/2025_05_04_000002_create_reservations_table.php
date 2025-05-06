@@ -10,8 +10,12 @@ return new class extends Migration {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
-            $table->date('reservation_date');
+            $table->string('contact_number');
+            $table->date('reservation_from');
+            $table->date('reservation_to');
+            $table->string('room_type');
+            $table->string('room_capacity');
+            $table->string('payment_type');
             $table->timestamps();
         });
     }

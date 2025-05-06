@@ -15,12 +15,12 @@
             <form action="{{ route('reservation.submit') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Contact Name:</label>
+                    <label for="name">Name:</label>
                     <input type="text" name="name" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="number">Contact Number:</label>
-                    <input type="text" name="number" id="number" required>
+                    <label for="contact_number">Contact Number:</label>
+                    <input type="text" name="contact_number" id="contact_number" required>
                 </div>
                 <div class="form-group">
                     <label>Reservation Date:</label>
@@ -39,15 +39,15 @@
                     <label>Room Type:</label>
                     <div class="radio-group">
                         <label class="radio-option">
-                            <input type="radio" name="room" value="Regular" required>
+                            <input type="radio" name="room_type" value="Regular" required>
                             Regular
                         </label>
                         <label class="radio-option">
-                            <input type="radio" name="room" value="Deluxe">
+                            <input type="radio" name="room_type" value="Deluxe">
                             De Luxe
                         </label>
                         <label class="radio-option">
-                            <input type="radio" name="room" value="Suite">
+                            <input type="radio" name="room_type" value="Suite">
                             Suite
                         </label>
                     </div>
@@ -56,15 +56,15 @@
                     <label>Room Capacity:</label>
                     <div class="radio-group">
                         <label class="radio-option">
-                            <input type="radio" name="capacity" value="Family" required>
+                            <input type="radio" name="room_capacity" value="Family" required>
                             Family
                         </label>
                         <label class="radio-option">
-                            <input type="radio" name="capacity" value="Double">
+                            <input type="radio" name="room_capacity" value="Double">
                             Double
                         </label>
                         <label class="radio-option">
-                            <input type="radio" name="capacity" value="Single">
+                            <input type="radio" name="room_capacity" value="Single">
                             Single
                         </label>
                     </div>
@@ -73,15 +73,15 @@
                     <label>Payment Type:</label>
                     <div class="radio-group">
                         <label class="radio-option">
-                            <input type="radio" name="payment" value="Cash" required>
+                            <input type="radio" name="payment_type" value="Cash" required>
                             Cash
                         </label>
                         <label class="radio-option">
-                            <input type="radio" name="payment" value="Cheque">
+                            <input type="radio" name="payment_type" value="Cheque">
                             Cheque
                         </label>
                         <label class="radio-option">
-                            <input type="radio" name="payment" value="Credit">
+                            <input type="radio" name="payment_type" value="Credit">
                             Credit Card
                         </label>
                     </div>
